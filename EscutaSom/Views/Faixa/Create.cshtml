@@ -1,0 +1,59 @@
+﻿@model EscutaSom.Models.Faixa
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Faixa</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nome)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nome)
+            @Html.ValidationMessageFor(model => model.Nome)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DuracaoMusica)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DuracaoMusica)
+            @Html.ValidationMessageFor(model => model.DuracaoMusica)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CriacaoMusica)
+        </div>
+        <div class="editor-label">
+            @Html.TextBoxFor(model => model.CriacaoMusica,
+    new { type = "date" })
+        </div>
+
+        <div class="editor-field">
+            @Html.DropDownList("Id_Album",
+              new SelectList(ViewBag.listaAlbum, "Id", "Nome"),
+                    "Selecione o Álbum ")
+
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

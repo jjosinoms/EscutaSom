@@ -1,0 +1,43 @@
+﻿@model EscutaSom.Models.Usuario
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Usuario</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Nome)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nome)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Username)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Username)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Senha)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Senha)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ConfirmarSenha)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ConfirmarSenha)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

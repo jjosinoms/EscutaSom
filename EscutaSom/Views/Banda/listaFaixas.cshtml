@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "listaFaixas";
+}
+
+<h2>Faixas</h2>
+
+
+    <table>
+    <thead>
+        <tr>
+            <th><center> Faixa  </center></th>
+        </tr>
+
+    </thead>
+        <tbody>
+
+            @foreach (var i in ViewBag.listaFaixas)
+            {
+                <tr>
+                    <td><a href="http://www.youtube.com/results?search_query=@i.Nome" target="_blank">@i.Nome</a> </td>
+                </tr>                
+            }
+        </tbody>
+</table>

@@ -1,0 +1,42 @@
+﻿@model EscutaSom.Models.Usuario
+
+@{
+    ViewBag.Title = "Verificacao";
+}
+<h2>Login</h2>
+<div><h4 id="temOla">  @ViewBag.mensagem </h4> </div><br />
+
+
+@*@foreach (var i in @ViewBag.todosUsuariosCadastrados)
+{
+    <p>@i.Nome</p>
+}*@
+
+@*<div class="editor-field" >
+    @Html.DropDownList("listaId",
+                        new SelectList(ViewBag.listaUsuario, "Id", "Username"),
+                    "Selecione o Usuario ")
+
+</div>*@
+
+<form class="form-horizontal" id="form-horizontal" action="../Usuario/Verificacao" method="post">
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.Username, new { id = "login-validation", @placeholder = "Username" })
+
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.Senha, new { id = "senha-validation", @placeholder = "Senha", type = "password" })
+    </div>
+
+    <p>
+        <button type="submit">Entrar</button>
+    </p>
+</form>
+
+
+<script>
+    $(document).ready(function () {
+
+
+    });
+</script>
